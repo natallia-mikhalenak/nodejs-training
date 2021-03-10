@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_aws",
+  "version": "0.0.1",
+  "scripts": {
+    "task1": "nodemon ./src/module_1/task_1.js",
+    "task2": "nodemon ./src/module_1/task_2.js",
+    "task3": "nodemon --exec babel-node ./src/module_1/task_3.js"
+  },
+  "author": "natallia_mikhalenak",
+  "devDependencies": {
+    "@babel/core": "7.13.*",
+    "@babel/node": "7.13.*",
+    "@babel/preset-env": "7.13.9*",
+    "nodemon": "2.0.*"
+  },
+  "dependencies": {
+    "csvtojson": "2.0.*"
+  }
+}
