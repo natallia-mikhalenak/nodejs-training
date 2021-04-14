@@ -2,10 +2,11 @@
   "name": "nodejs_aws",
   "version": "0.0.1",
   "scripts": {
-    "task1": "nodemon ./src/module_1/task_1.js",
-    "task2": "nodemon ./src/module_1/task_2.js",
-    "task3": "nodemon --exec babel-node ./src/module_1/task_3.js",
+    "task1": "nodemon ./module_1/task_1.js",
+    "task2": "nodemon ./module_1/task_2.js",
+    "task3": "nodemon --exec babel-node ./module_1/task_3.js",
     "dev": "nodemon --exec babel-node ./src/index.js",
+    "init_db": "babel-node ./init_db.js",
     "lint": "eslint ./src"
   },
   "author": "natallia_mikhalenak",
@@ -22,6 +23,9 @@
     "csvtojson": "2.0.*",
     "express": "4.17.*",
     "joi": "17.4.*",
+    "pg": "8.5.*",
+    "pg-hstore": "2.3.*",
+    "sequelize": "6.6.*",
     "uuid": "8.3.*"
   }
 }

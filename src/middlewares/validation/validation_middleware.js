@@ -1,5 +1,4 @@
-import { prepareSchemaErrorMessage } from './errors_utils';
-import { isLoginExists } from '../storage';
+import { prepareSchemaErrorMessage } from '../../utils/errors_utils';
 
 export const VALIDATION_NAMES = {
     PARAMS: 'params',
@@ -18,10 +17,9 @@ export const validateSchema = (schema, fieldName) => {
     };
 };
 
-export const validateLogin = (value) => {
-    const isExist = isLoginExists(value);
-    if (isExist) {
-        throw new Error('Login already exists');
+export const errorMiddleware = (err, req, res, next) => {
+    if (err) {
+        res.status(500).json({ status: 'failed', errors: [`Failed to process request: ${err.message}`] });
     }
-    return value;
+    next();
 };

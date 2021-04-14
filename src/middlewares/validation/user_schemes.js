@@ -1,5 +1,4 @@
 import Joi from 'joi';
-import { validateLogin } from './utils/validation_utils';
 
 const USER_FIELDS = {
     ID: Joi.string().guid({
@@ -7,7 +6,7 @@ const USER_FIELDS = {
             'uuidv4'
         ]
     }).required(),
-    LOGIN: Joi.string().required().custom(validateLogin, 'custom validator'),
+    LOGIN: Joi.string().required(),
     PASSWORD: Joi.string().pattern(/^(?=.*\d)(?=.*[a-zA-Z]).{1,}$/).required(),
     AGE: Joi.number()
         .integer()
