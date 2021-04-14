@@ -1,5 +1,5 @@
-import { generateId } from './utils/data_utils';
-import { sortByFieldName, limitArray } from './utils/data_utils';
+import { generateId } from './data_utils';
+import { sortByFieldName, limitArray } from './data_utils';
 
 const USERS_STORAGE = new Map();
 
