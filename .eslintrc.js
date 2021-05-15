@@ -11,6 +11,7 @@ module.exports = {
     },
     "parserOptions": {
         "ecmaFeatures": {
+            "experimentalDecorators": true,
             "arrowFunctions": true,
             "blockBindings": true,
             "classes": true,
