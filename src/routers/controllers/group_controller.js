@@ -1,10 +1,12 @@
 import { prepareErrorMessage } from '../../utils/errors_utils';
 import { GroupModel } from '../../models/index';
 import { GroupService } from '../../services/index';
+import { ErrorMethodLogger } from '../../utils/logger';
 
 const groupService = new GroupService(GroupModel);
 
 export class GroupController {
+    @ErrorMethodLogger()
     static async getGroupById(req, res, next) {
         const id = req.params.id;
         try {
@@ -19,6 +21,7 @@ export class GroupController {
         }
     }
 
+    @ErrorMethodLogger()
     static async addGroup(req, res, next) {
         try {
             const group = await groupService.addGroup(req.body);
@@ -28,6 +31,7 @@ export class GroupController {
         }
     }
 
+    @ErrorMethodLogger()
     static async getGroups(req, res, next) {
         try {
             const groups = await groupService.getGroups();
@@ -37,6 +41,7 @@ export class GroupController {
         }
     }
 
+    @ErrorMethodLogger()
     static async updateGroup(req, res, next) {
         try {
             await groupService.updateGroup(req.body);
@@ -46,6 +51,7 @@ export class GroupController {
         }
     }
 
+    @ErrorMethodLogger()
     static async deleteGroup(req, res, next) {
         try {
             await groupService.deleteGroup(req.params.id);

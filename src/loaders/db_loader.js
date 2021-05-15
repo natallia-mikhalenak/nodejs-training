@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize';
 import { dbConfig } from '../config/db_config';
+import { logger } from '../utils/logger';
 
 export const sequelize = new Sequelize(
     dbConfig.database,
@@ -13,6 +14,6 @@ export const sequelize = new Sequelize(
     }
 );
 
-sequelize.authenticate().catch((error) =>
-    console.log('Error', error)
+sequelize.authenticate().catch((err) =>
+    logger.error('DB error', err)
 );

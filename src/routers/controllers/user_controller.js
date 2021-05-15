@@ -1,10 +1,12 @@
 import { prepareErrorMessage } from '../../utils/errors_utils';
 import { UserModel } from '../../models/index';
 import { UserService } from '../../services/index';
+import { ErrorMethodLogger } from '../../utils/logger';
 
 const userService = new UserService(UserModel);
 
 export class UserController {
+    @ErrorMethodLogger()
     static async getUser(req, res, next) {
         const id = req.params.id;
         try {
@@ -19,6 +21,7 @@ export class UserController {
         }
     }
 
+    @ErrorMethodLogger()
     static async addUser(req, res, next) {
         try {
             const user = await userService.addUser(req.body);
@@ -28,6 +31,7 @@ export class UserController {
         }
     }
 
+    @ErrorMethodLogger()
     static async getUsersByLogin(req, res, next) {
         try {
             const { limit, loginSubString } = req.query;
@@ -39,6 +43,7 @@ export class UserController {
         }
     }
 
+    @ErrorMethodLogger()
     static async updateUser(req, res, next) {
         try {
             await userService.updateUser(req.body);
@@ -48,6 +53,7 @@ export class UserController {
         }
     }
 
+    @ErrorMethodLogger()
     static async deleteUser(req, res, next) {
         try {
             await userService.deleteUser(req.params.id);
