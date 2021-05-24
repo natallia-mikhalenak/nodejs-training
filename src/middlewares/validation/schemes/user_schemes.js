@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-const USER_FIELDS = {
+export const USER_FIELDS = {
     ID: Joi.string().guid({
         version: [
             'uuidv4'

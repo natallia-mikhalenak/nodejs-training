@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import { envConfig } from './config/env_config';
-import { errorMiddleware, loggerMiddleware } from './middlewares/index';
+import { errorMiddleware, loggerMiddleware, jwtMiddleware } from './middlewares/index';
 import { router as userRouter } from './routers/user_routers';
 import { router as groupRouter } from './routers/group_routers';
 import { router as userGroupRouter } from './routers/usergroup_routers';
+import { router as authRouter } from './routers/auth_routers';
 import { logger } from './utils/logger';
 
 const app = express();
@@ -11,8 +13,11 @@ app.listen(envConfig.port, () => {
     logger.info(`Server starts at http://localhost:${envConfig.port}`);
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(loggerMiddleware);
+app.use(jwtMiddleware);
+app.use('/', authRouter);
 app.use('/users', userRouter);
 app.use('/groups', groupRouter);
 app.use('/user_groups', userGroupRouter);

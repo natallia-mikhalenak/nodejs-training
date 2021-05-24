@@ -21,9 +21,11 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "7.13.*",
+    "cors": "2.8.*",
     "csvtojson": "2.0.*",
     "express": "4.17.*",
     "joi": "17.4.*",
+    "jsonwebtoken": "8.5.*",
     "pg": "8.5.*",
     "pg-hstore": "2.3.*",
     "sequelize": "6.6.*",

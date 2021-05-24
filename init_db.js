@@ -4,7 +4,7 @@ import { PERMISSIONS } from './src/utils/constants';
 const users = [{
     id: '0df71432-7b42-4eb3-bb11-def8334c4101',
     login: 'natallia',
-    password: 'secret',
+    password: 'Secret1',
     age: 18
 }, {
     id: '3dd71432-7b42-4eb3-bb11-def8334c5101',

@@ -73,6 +73,20 @@ export class UserService {
         }
     }
 
+    async getUserByLoginPassword(login, password) {
+        try {
+            return await this.userModel.findOne({
+                where: {
+                    login,
+                    password,
+                    isDeleted: false
+                }
+            });
+        } catch (err) {
+            throw new Error(err);
+        }
+    }
+
     async _checkUserExist(id) {
         const user = await this.getUser(id);
         if (!user) {
