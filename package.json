@@ -7,7 +7,8 @@
     "task3": "nodemon --exec babel-node ./module_1/task_3.js",
     "dev": "nodemon --exec babel-node ./src/index.js",
     "init_db": "babel-node ./init_db.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "test": "jest"
   },
   "author": "natallia_mikhalenak",
   "devDependencies": {
@@ -16,13 +17,18 @@
     "@babel/node": "7.13.*",
     "@babel/preset-env": "7.13.9*",
     "babel-eslint": "10.1.*",
+    "babel-jest": "27.0.*",
     "eslint": "7.22.*",
+    "jest": "27.0.*",
     "nodemon": "2.0.*"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "7.13.*",
+    "@babel/plugin-transform-runtime": "7.14.*",
+    "@babel/runtime": "7.14.*",
     "cors": "2.8.*",
     "csvtojson": "2.0.*",
+    "dotenv": "10.0.*",
     "express": "4.17.*",
     "joi": "17.4.*",
     "jsonwebtoken": "8.5.*",

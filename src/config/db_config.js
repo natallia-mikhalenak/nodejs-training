@@ -1,9 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 export const dbConfig = {
-    database:  process.env.DB_NAME || 'db_main',
-    schema: process.env.DB_SCHEMA_NAME || 'db_schema',
-    userName: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || 'root',
-    port: process.env.DB_PORT || '5432',
+    database:  process.env.DB_NAME,
+    schema: process.env.DB_SCHEMA_NAME,
+    userName: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
     dialect: 'postgres',
     protocol: 'postgres'
 };
